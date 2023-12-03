@@ -1,0 +1,26 @@
+name: Daily Discord Notification
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Send Notification to Discord
+        run: python send_notification.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Update Log
+        run: |
+          echo "$(date '+%Y-%m-%d') - Notification sent" >> log.txt
+          git config --global user.name 'hyung000620'
+          git config --global user.email 'dksms1@naver.com'
+          git add log.txt
+          git commit -m "Update log for $(date '+%Y-%m-%d')"
+          git push
