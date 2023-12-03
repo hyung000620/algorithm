@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Send Notification to Discord
-        run: python send_notification.py
+        run: python scripts/send_notification.py
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
