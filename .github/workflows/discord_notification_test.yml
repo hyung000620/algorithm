@@ -24,3 +24,5 @@ jobs:
           git add log.txt
           git commit -m "Update log for $(date '+%Y-%m-%d')"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
