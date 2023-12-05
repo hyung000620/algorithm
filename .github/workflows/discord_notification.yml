@@ -1,4 +1,4 @@
-name: Daily Discord Notification Test
+name: Daily Discord Notification
 
 on:
   schedule:
