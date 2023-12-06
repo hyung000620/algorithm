@@ -2,7 +2,7 @@ name: Daily Discord Notification
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   notify-discord:
@@ -25,4 +25,4 @@ jobs:
           git commit -m "Update log for $(date '+%Y-%m-%d')"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
