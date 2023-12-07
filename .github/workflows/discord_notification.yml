@@ -27,4 +27,4 @@ jobs:
           git remote set-url origin https://hyung000620:${{ secrets.SECRET_TOKEN }}@github.com/hyung000620/algorithm.git
           git push
         env:
-          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          GITHUB_TOKEN : ${{ secrets.SECRET_TOKEN }}
