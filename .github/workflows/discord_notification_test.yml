@@ -23,6 +23,8 @@ jobs:
           git config --global user.email 'dksms1@naver.com'
           git add log.txt
           git commit -m "Update log for $(date '+%Y-%m-%d')"
+          # Set up git to use your PAT for authentication
+          git remote set-url origin https://hyung000620:${{ secrets.SECRET_TOKEN }}@github.com/hyung000620/algorithm.git
           git push
         env:
           SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
